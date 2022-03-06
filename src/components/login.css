@@ -1,5 +1,101 @@
-.login {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+}
+
+.container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 2fr;
   height: 100vh;
+}
+
+.login-banner {
+  background-image: url(../image/bennerlogin.jpg);
+  background-size: cover;
+}
+
+.h1-banner {
+  color: #fff;
+  font-size: 8rem;
+  margin-top: 22rem;
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 15rem;
+}
+
+.h1-login {
+  color: #1b191a;
+  font-size: 2rem;
+  margin-top: 3rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+img {
+  height: 100px;
+  width: 150px;
+}
+
+label {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+input {
+  border: 1px solid #eee;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  margin: 15px 0 15px 0;
+  background: #eee;
+}
+
+input:focus,
+input:hover {
+  outline: none;
+  border-color: #ebad00;
+  box-shadow: 0 0 0 3px #fea;
+}
+
+button {
+  font-size: 1.3rem;
+  font-family: "Fredoka", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  background: #fb1;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  max-width: 9rem;
+  transition: 0.1s;
+  margin-top: 1rem;
+}
+
+button:hover,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #ebad00;
+}
+
+button:disabled {
+  opacity: 0.5rem;
+  cursor: wait;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
