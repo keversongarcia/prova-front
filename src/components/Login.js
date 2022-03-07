@@ -1,29 +1,31 @@
-import React from "react";
-import { TOKEN_POST, TOKEN } from "../api";
+import React, { useEffect } from "react";
+import { useRoutes } from "react-router-dom";
+import { http } from "../api";
 import styles from "../components/Login.module.css";
 import useForm from "../Hooks/useForm";
 import Button from "./Forms/Button";
 import Input from "./Forms/Input";
 
-const Login = () => {
+const Login = ({ history }) => {
   const username = useForm();
   const password = useForm();
+
+  const data = {
+    username: username.value,
+    password: password.value,
+  };
 
   async function handleSubmit(event) {
     event.preventDefault();
     if (username.validate() && password.validate()) {
-      const { url, options } = TOKEN_POST({
-        username: username.value,
-        password: password.value,
-      });
+      const response = await http.post("/auth/login", data);
 
-      const response = await fetch(url, options);
-      for (var pair of response.headers.entries()) {
-        //Converte entradas do header, para pegar o authorization
-        console.log(pair[0] + ": " + pair[1]);
+      if (response.status === 200) {
+        history.push("/");
       }
-      console.log(response.headers);
-      // window.localStorage.setItem("token", TOKEN);
+
+      const token = response.headers.authorization;
+      localStorage.setItem("token", token);
 
       // const json = await response.json();
       // console.log(json.headers);
