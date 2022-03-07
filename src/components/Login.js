@@ -1,5 +1,5 @@
 import React from "react";
-import { TOKEN_POST, PRODUCTLIST_GET, TOKEN } from "../api";
+import { TOKEN_POST, TOKEN } from "../api";
 import styles from "../components/Login.module.css";
 import useForm from "../Hooks/useForm";
 import Button from "./Forms/Button";
@@ -18,9 +18,16 @@ const Login = () => {
       });
 
       const response = await fetch(url, options);
-      window.localStorage.setItem("token", TOKEN);
-      const json = await response.json();
-      console.log(json);
+      for (var pair of response.headers.entries()) {
+        //Converte entradas do header, para pegar o authorization
+        console.log(pair[0] + ": " + pair[1]);
+      }
+      console.log(response.headers);
+      // window.localStorage.setItem("token", TOKEN);
+
+      // const json = await response.json();
+      // console.log(json.headers);
+      // console.log(json);
     }
   }
 
