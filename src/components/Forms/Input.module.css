@@ -1,0 +1,30 @@
+.label {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.input {
+  border: 1px solid #eee;
+  display: block;
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  transition: 0.1s;
+  margin: 15px 0 15px 0;
+  background: #eee;
+}
+
+.input:focus,
+.input:hover {
+  outline: none;
+  border-color: #ebad00;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #ebad00;
+}
+
+.error {
+  color: #f31;
+  font-size: 0.87rem;
+  margin-top: -0.5rem;
+}

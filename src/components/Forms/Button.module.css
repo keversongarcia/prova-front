@@ -1,0 +1,26 @@
+.button {
+  font-size: 1.3rem;
+  font-family: "Fredoka", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  background: #fb1;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  max-width: 9rem;
+  transition: 0.1s;
+  margin-top: 1rem;
+  color: #764701;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #ebad00;
+}
+
+.button:disabled {
+  opacity: 0.5rem;
+  cursor: wait;
+}

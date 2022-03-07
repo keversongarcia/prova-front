@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.3fr 2fr;
+  height: 100vh;
+}
+
+.loginbanner {
+  background-image: url(../image/bennerlogin.jpg);
+  background-size: cover;
+}
+
+.h1banner {
+  color: #fff;
+  font-size: 8rem;
+  margin-top: 22rem;
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+}
+
+.loginbox {
+  background-color: #fff;
+  padding: 9rem;
+  margin-top: 1rem;
+}
+
+.h1login {
+  color: #1b191a;
+  font-size: 2rem;
+  margin-top: 3rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
