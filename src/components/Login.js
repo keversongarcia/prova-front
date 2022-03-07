@@ -1,5 +1,5 @@
 import React from "react";
-import { TOKEN_POST, TOKEN_GET } from "../api";
+import { TOKEN_POST, PRODUCTLIST_GET, TOKEN } from "../api";
 import styles from "../components/Login.module.css";
 import useForm from "../Hooks/useForm";
 import Button from "./Forms/Button";
@@ -8,13 +8,6 @@ import Input from "./Forms/Input";
 const Login = () => {
   const username = useForm();
   const password = useForm();
-
-  /*async function getUser(token) {
-    const { url, options } = TOKEN_GET(token);
-    const response = await fetch(url, options);
-    const json = await response.json();
-    console.log(json);
-  }*/
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -25,8 +18,8 @@ const Login = () => {
       });
 
       const response = await fetch(url, options);
+      window.localStorage.setItem("token", TOKEN);
       const json = await response.json();
-      window.localStorage.setItem("token", json.token);
       console.log(json);
     }
   }
